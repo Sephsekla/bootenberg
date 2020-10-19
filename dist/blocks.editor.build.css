@@ -43,7 +43,7 @@ html {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
     max-width: 1140px; } }
 
-.row {
+.row, .wp-block-bootenberg-row .block-editor-inner-blocks .block-editor-block-list__layout {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -2934,5 +2934,5 @@ html {
 p {
   color: red; }
 
-.wp-block-bootenberg-container .block-editor-inner-blocks {
+.is-selected .bootenberg-outer .block-editor-inner-blocks, .has-child-selected .bootenberg-outer .block-editor-inner-blocks {
   border: 2px dashed gray; }

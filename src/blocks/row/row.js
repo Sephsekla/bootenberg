@@ -23,15 +23,15 @@ const classnames = require( 'classnames' );
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'bootenberg/container', {
+registerBlockType( 'bootenberg/row', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Bootenberg - Container' ), // Block title.
+	title: __( 'Bootenberg - Row' ), // Block title.
 	icon: 'align-center', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
-		__( 'bootenberg — Container' ),
+		__( 'bootenberg — Row' ),
 		__( 'bootstrap' ),
-		__( 'container' ),
+		__( 'row' ),
 	],
 
 	/**
@@ -49,7 +49,7 @@ registerBlockType( 'bootenberg/container', {
 		const { className } = props;
 
 		return (
-			<div className={ classnames( 'container bootenberg-outer', className ) }>
+			<div className={ classnames( 'bootenberg-outer', className ) }>
 				<InnerBlocks />
 			</div>
 		);
@@ -70,9 +70,19 @@ registerBlockType( 'bootenberg/container', {
 		const { className } = props;
 
 		return (
-			<div className={ classnames( 'container', className ) }>
+			<div className={ classnames( 'row', className ) }>
 				<InnerBlocks.Content />
 			</div>
 		);
 	},
 } );
+
+const { createHigherOrderComponent } = wp.compose;
+ 
+const withClientIdClassName = createHigherOrderComponent( ( BlockListBlock ) => {
+    return ( props ) => {
+        return <BlockListBlock { ...props } className={ classnames(props.clientId, "test") } />;
+    };
+}, 'withClientIdClassName' );
+ 
+//wp.hooks.addFilter( 'editor.BlockListBlock', 'bootenberg/row', withClientIdClassName );
