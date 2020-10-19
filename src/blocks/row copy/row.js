@@ -1,5 +1,5 @@
 /**
- * BLOCK: Row
+ * BLOCK: Container
  *
  * Create a Bootstrap container
  * Wraps content in a container div
@@ -34,7 +34,6 @@ registerBlockType( 'bootenberg/row', {
 		__( 'row' ),
 	],
 
-
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
 	 * This represents what the editor will render when the block is used.
@@ -49,12 +48,9 @@ registerBlockType( 'bootenberg/row', {
 	edit: ( props ) => {
 		const { className } = props;
 
-
-		const ALLOWED_BLOCKS = [ 'bootenberg/column' ];
-
 		return (
 			<div className={ classnames( 'bootenberg-outer', className ) }>
-				<InnerBlocks orientation="horizontal" allowedBlocks={ ALLOWED_BLOCKS } __experimentalPassedProps={ { className: 'row' } } />
+				<InnerBlocks />
 			</div>
 		);
 	},

@@ -34,6 +34,9 @@ registerBlockType( 'bootenberg/column', {
 		__( 'column' ),
 	],
 	parent: [ 'bootenberg/row' ],
+	supports: {
+		lightBlockWrapper: true,
+	},
 
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
@@ -50,7 +53,7 @@ registerBlockType( 'bootenberg/column', {
 		const { className } = props;
 
 		return (
-			<div className={ classnames( 'bootenberg-outer', className ) }>
+			<div className={ classnames( 'col-6 bootenberg-outer', className ) }>
 				<InnerBlocks />
 			</div>
 		);
@@ -77,14 +80,3 @@ registerBlockType( 'bootenberg/column', {
 		);
 	},
 } );
-
-
-const { createHigherOrderComponent } = wp.compose;
- 
-const withClientIdClassName = createHigherOrderComponent( ( BlockListBlock ) => {
-    return ( props ) => {
-        return <BlockListBlock { ...props } className={ classnames(props.clientId, "col-6") } />;
-    };
-}, 'withClientIdClassName' );
- 
-wp.hooks.addFilter( 'editor.BlockListBlock', 'bootenberg/column', withClientIdClassName );

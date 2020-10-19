@@ -1,6 +1,3 @@
-p{
-    color: red;
-}
 
 .is-selected, .has-child-selected{
 
@@ -8,6 +5,7 @@ p{
 
         .block-editor-inner-blocks{
             border: 1px dashed gray;
+            min-height: 30px;
         }
 
 }
@@ -16,10 +14,10 @@ p{
 
 .wp-block-bootenberg-row{
 
-    .block-editor-inner-blocks{
-    .block-editor-block-list__layout{
+    > .block-editor-inner-blocks{
+    > .block-editor-block-list__layout{
 
-        @extend .row;
+        //@extend .row;
 
         > .wp-block{
             margin-top: 0;
