@@ -14,3 +14,4 @@ import './editor.scss';
 
 import './blocks/container/container.js';
 import './blocks/row/row.js';
+import './blocks/column/column.js';

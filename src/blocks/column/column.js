@@ -1,5 +1,5 @@
 /**
- * BLOCK: Row
+ * BLOCK: Column
  *
  * Create a Bootstrap container
  * Wraps content in a container div
@@ -23,16 +23,17 @@ const classnames = require( 'classnames' );
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'bootenberg/row', {
+registerBlockType( 'bootenberg/column', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Bootenberg - Row' ), // Block title.
+	title: __( 'Bootenberg - column' ), // Block title.
 	icon: 'align-center', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
-		__( 'bootenberg — Row' ),
+		__( 'bootenberg — column' ),
 		__( 'bootstrap' ),
-		__( 'row' ),
+		__( 'column' ),
 	],
+	parent: [ 'bootenberg/row' ],
 
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
@@ -48,12 +49,9 @@ registerBlockType( 'bootenberg/row', {
 	edit: ( props ) => {
 		const { className } = props;
 
-
-		const ALLOWED_BLOCKS = [ 'bootenberg/column' ];
-
 		return (
 			<div className={ classnames( 'bootenberg-outer', className ) }>
-				<InnerBlocks orientation="horizontal" allowedBlocks={ ALLOWED_BLOCKS } />
+				<InnerBlocks />
 			</div>
 		);
 	},
@@ -73,9 +71,20 @@ registerBlockType( 'bootenberg/row', {
 		const { className } = props;
 
 		return (
-			<div className={ classnames( 'row', className ) }>
+			<div className={ classnames( 'col-6', className ) }>
 				<InnerBlocks.Content />
 			</div>
 		);
 	},
 } );
+
+
+const { createHigherOrderComponent } = wp.compose;
+ 
+const withClientIdClassName = createHigherOrderComponent( ( BlockListBlock ) => {
+    return ( props ) => {
+        return <BlockListBlock { ...props } className={ classnames(props.clientId, "col-6") } />;
+    };
+}, 'withClientIdClassName' );
+ 
+wp.hooks.addFilter( 'editor.BlockListBlock', 'bootenberg/column', withClientIdClassName );
