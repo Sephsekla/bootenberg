@@ -10,5 +10,8 @@
   "dependencies": {
     "bootstrap": "^4.5.3",
     "cgb-scripts": "1.23.1"
+  },
+  "devDependencies": {
+    "classnames": "^2.2.6"
   }
 }

@@ -8,6 +8,7 @@
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { InnerBlocks } = wp.blockEditor;
+const classnames = require( 'classnames' );
 
 /**
  * Register: aa Gutenberg Block.
@@ -48,19 +49,7 @@ registerBlockType( 'bootenberg/container', {
 		const { className } = props;
 
 		return (
-			<div className={ className }>
-				<p>— Hello from the backend.</p>
-				<p>
-					CGB BLOCK: <code>bootenberg</code> is a new Gutenberg block
-				</p>
-				<p>
-					It was created via{ ' ' }
-					<code>
-						<a href="https://github.com/ahmadawais/create-guten-block">
-							create-guten-block
-						</a>
-					</code>.
-				</p>
+			<div className={ classnames( 'container', className ) }>
 				<InnerBlocks />
 			</div>
 		);
@@ -81,20 +70,8 @@ registerBlockType( 'bootenberg/container', {
 		const { className } = props;
 
 		return (
-			<div className={ className }>
-				<p>— Hello from the frontend.</p>
-				<p>
-					CGB BLOCK: <code>bootenberg</code> is a new Gutenberg block.
-				</p>
-				<p>
-					It was created via{ ' ' }
-					<code>
-						<a href="https://github.com/ahmadawais/create-guten-block">
-							create-guten-block
-						</a>
-					</code>.
-				</p>
-				<InnerBlocks />
+			<div className={ classnames( 'container', className ) }>
+				<InnerBlocks.Content />
 			</div>
 		);
 	},
