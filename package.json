@@ -1,5 +1,5 @@
 {
-  "name": "bootenberg-cgb-guten-block",
+  "name": "@sephsekla/bootenberg",
   "version": "1.0.0",
   "private": true,
   "scripts": {

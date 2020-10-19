@@ -5,12 +5,9 @@
  * Wraps content in a container div
  */
 
-//  Import CSS.
-import './editor.scss';
-import './style.scss';
-
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
+const { InnerBlocks } = wp.blockEditor;
 
 /**
  * Register: aa Gutenberg Block.
@@ -48,9 +45,12 @@ registerBlockType( 'bootenberg/container', {
 	 * @returns {Mixed} JSX Component.
 	 */
 	edit: ( props ) => {
-		// Creates a <p class='wp-block-cgb-block-bootenberg'></p>.
+		
+		const {className} = props;
+
+
 		return (
-			<div className={ props.className }>
+			<div className={ className }>
 				<p>— Hello from the backend.</p>
 				<p>
 					CGB BLOCK: <code>bootenberg</code> is a new Gutenberg block
@@ -63,6 +63,7 @@ registerBlockType( 'bootenberg/container', {
 						</a>
 					</code>.
 				</p>
+				<InnerBlocks />
 			</div>
 		);
 	},
@@ -79,8 +80,11 @@ registerBlockType( 'bootenberg/container', {
 	 * @returns {Mixed} JSX Frontend HTML.
 	 */
 	save: ( props ) => {
+
+		const {className} = props;
+
 		return (
-			<div className={ props.className }>
+			<div className={ className }>
 				<p>— Hello from the frontend.</p>
 				<p>
 					CGB BLOCK: <code>bootenberg</code> is a new Gutenberg block.
@@ -93,6 +97,7 @@ registerBlockType( 'bootenberg/container', {
 						</a>
 					</code>.
 				</p>
+				<InnerBlocks />
 			</div>
 		);
 	},

@@ -5,13 +5,17 @@
  * Enqueue CSS/JS of all the blocks.
  *
  * @since   1.0.0
- * @package CGB
+ * @package bootenberg
  */
+
+ namespace bootenberg;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+
 
 /**
  * Enqueue Gutenberg block assets for both frontend + backend.
@@ -27,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @uses {wp-editor} for WP editor styles.
  * @since 1.0.0
  */
-function bootenberg_cgb_block_assets() { // phpcs:ignore
+function block_assets() { // phpcs:ignore
 	// Register block styles for both frontend + backend.
 	wp_register_style(
 		'bootenberg-cgb-style-css', // Handle.
@@ -87,4 +91,4 @@ function bootenberg_cgb_block_assets() { // phpcs:ignore
 }
 
 // Hook: Block assets.
-add_action( 'init', 'bootenberg_cgb_block_assets' );
+add_action( 'init', __NAMESPACE__.'\\block_assets' );
