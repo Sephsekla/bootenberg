@@ -45,9 +45,7 @@ registerBlockType( 'bootenberg/container', {
 	 * @returns {Mixed} JSX Component.
 	 */
 	edit: ( props ) => {
-		
-		const {className} = props;
-
+		const { className } = props;
 
 		return (
 			<div className={ className }>
@@ -80,8 +78,7 @@ registerBlockType( 'bootenberg/container', {
 	 * @returns {Mixed} JSX Frontend HTML.
 	 */
 	save: ( props ) => {
-
-		const {className} = props;
+		const { className } = props;
 
 		return (
 			<div className={ className }>

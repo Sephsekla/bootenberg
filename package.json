@@ -8,6 +8,7 @@
     "eject": "cgb-scripts eject"
   },
   "dependencies": {
+    "bootstrap": "^4.5.3",
     "cgb-scripts": "1.23.1"
   }
 }
