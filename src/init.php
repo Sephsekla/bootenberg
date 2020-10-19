@@ -92,3 +92,20 @@ function block_assets() { // phpcs:ignore
 
 // Hook: Block assets.
 add_action( 'init', __NAMESPACE__.'\\block_assets' );
+
+function block_category( $categories, $post ) {
+    $category_slugs = wp_list_pluck( $categories, 'slug' );
+    return in_array( 'bootenberg', $category_slugs, true ) ? $categories : array_merge(
+        
+        array(
+            array(
+                'slug'  => 'bootenberg',
+                'title' => 'Bootenberg',
+                'icon'  => null,
+            ),
+        ),
+        $categories
+    );
+}
+
+add_filter( 'block_categories', __NAMESPACE__.'\\block_category', 10, 2);
