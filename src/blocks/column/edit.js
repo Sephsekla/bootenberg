@@ -22,7 +22,7 @@ const editColumn = ( props ) => {
                             id='reverse-form-toggle'
                             label={ 'Default' }
                             value={ xs }
-                            onChange={ ( xs ) => setAttributes( { xs } ) }
+                            onChange={ ( value ) => setAttributes( { xs: value } ) }
 
                             
                             options={ [
@@ -39,14 +39,14 @@ const editColumn = ( props ) => {
                                 { value: 10, label: '10 (5/6)' },
                                 { value: 11, label: '11 (11/12)' },
                                 { value: 12, label: '12 (Full-width)' },
-                            ] }
+                            ] } 
                             
                         />
                     </PanelRow>
                 </PanelBody>
             </InspectorControls>
 
-            <div className={ classnames( 'bootenberg-outer', className ) }>
+            <div className={ classnames( 'bootenberg-outer' ) }>
                 <InnerBlocks />
             </div>
         </Fragment>

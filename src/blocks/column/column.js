@@ -14,6 +14,7 @@ const { default: editColumn } = require('./edit');
 const { Fragment } = wp.element;
 const { createHigherOrderComponent } = wp.compose;
 import './edit.js';
+import { createColumnClasses } from './shared.js';
 
 /**
  * Register: aa Gutenberg Block.
@@ -91,10 +92,9 @@ registerBlockType( 'bootenberg/column', {
 	 * @returns {Mixed} JSX Frontend HTML.
 	 */
 	save: ( props ) => {
-		const { className } = props;
 
 		return (
-			<div className={ classnames( 'col-6', className ) }>
+			<div className={ classnames( ...createColumnClasses( props )) }>
 				<InnerBlocks.Content />
 			</div>
 		);
@@ -109,8 +109,8 @@ const withClientIdClassName = createHigherOrderComponent( ( BlockListBlock ) => 
 			return <BlockListBlock { ...props } />;
 		  }
 
-        return <BlockListBlock { ...props } className={ classnames(props.clientId, 'col-6') } />;
-    };
+        return <BlockListBlock { ...props } className={ classnames( props.className, ...createColumnClasses( props ) ) } />;
+    }; 
 }, 'withClientIdClassName' );
 
 wp.hooks.addFilter( 'editor.BlockListBlock', 'bootenberg/column', withClientIdClassName );

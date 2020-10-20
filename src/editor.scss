@@ -4,7 +4,7 @@
 .bootenberg-outer{
 
         .block-editor-inner-blocks{
-            border: 10px dashed gray;
+            border: 1px dashed gray;
             min-height: 30px;
             padding: 10px;
         }
@@ -23,6 +23,8 @@
         > .wp-block{
             margin-top: 0;
             margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
         }
     }
 
