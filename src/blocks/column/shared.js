@@ -2,8 +2,6 @@ const createColumnClasses = ( props ) => {
 
 	const { xs, sm, md, lg, xl } = props.attributes;
 
-	console.log(props);
-
 	let classes = [];
 
 	classes.push( xs ? `col-${ xs }` : 'col-12' );

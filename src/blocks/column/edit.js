@@ -22,7 +22,7 @@ const editColumn = ( props ) => {
                             id='reverse-form-toggle'
                             label={ 'Default' }
                             value={ xs }
-                            onChange={ ( value ) => setAttributes( { xs: value } ) }
+                            onChange={ ( value ) => setAttributes( { xs: parseInt(value) } ) }
 
                             
                             options={ [

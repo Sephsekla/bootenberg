@@ -93,6 +93,8 @@ registerBlockType( 'bootenberg/column', {
 	 */
 	save: ( props ) => {
 
+		console.log(props.attributes);
+
 		return (
 			<div className={ classnames( ...createColumnClasses( props )) }>
 				<InnerBlocks.Content />

@@ -2936,8 +2936,11 @@ html {
   min-height: 30px;
   padding: 10px; }
 
-.wp-block-bootenberg-row > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block {
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0; }
+.wp-block-bootenberg-row > .block-editor-inner-blocks {
+  border: 1px dashed rgba(128, 128, 128, 0.5);
+  min-height: 30px; }
+  .wp-block-bootenberg-row > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0; }
