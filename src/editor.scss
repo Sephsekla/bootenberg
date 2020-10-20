@@ -13,7 +13,7 @@
 
 }
 
-.wp-block-bootenberg-row{
+.wp-block-bootenberg-row > .bootenberg-outer{
 
     > .block-editor-inner-blocks{
 
@@ -21,17 +21,17 @@
         min-height: 30px;
         
 
-    > .block-editor-block-list__layout{
-
-        //@extend .row;
-
-        > .wp-block{
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
-        }
-    }
-
+       
 }
+}
+
+.wp-block-bootenberg-row.block-editor-block-list__layout{
+
+
+    > .wp-block{
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }

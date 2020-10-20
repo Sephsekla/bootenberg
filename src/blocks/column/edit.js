@@ -5,6 +5,7 @@ const { PanelBody, PanelRow, FormToggle, SelectControl } = wp.components;
 const classnames = require( 'classnames' );
 const { Fragment } = wp.element;
 const { createHigherOrderComponent } = wp.compose;
+import { createColumnClasses } from './shared.js';
 
 
 /**
@@ -83,7 +84,7 @@ const editColumn = ( props ) => {
 const addWrapperClasses = createHigherOrderComponent( ( BlockListBlock ) => {
     return ( props ) => {
 
-		console.log(props);
+
 
 		// Bail out if it’s not the block we want to target.
 		if ( 'bootenberg/column' !== props.block.name ) {
