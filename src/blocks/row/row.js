@@ -1,8 +1,8 @@
 /**
  * BLOCK: Row
  *
- * Create a Bootstrap container
- * Wraps content in a container div
+ * Create a Bootstrap row
+ * Wraps content in a row div
  */
 
 const { __ } = wp.i18n; // Import __() from wp.i18n

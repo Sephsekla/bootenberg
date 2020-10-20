@@ -6,6 +6,11 @@ const classnames = require( 'classnames' );
 const { Fragment } = wp.element;
 const { createHigherOrderComponent } = wp.compose;
 
+
+/**
+ * Render select element for sidebar
+ * @param {*} props 
+ */
 const RenderSelect = ( props ) => {
 
     const { size, label, label2 } = props;
@@ -44,6 +49,10 @@ const RenderSelect = ( props ) => {
 </PanelRow>
 }
 
+
+/**
+ * Edit function
+ */
 const editColumn = ( props ) => {
     const { className, setAttributes } = props;
     const { xs, sm, md, lg, xl } = props.attributes;
@@ -66,5 +75,26 @@ const editColumn = ( props ) => {
         </Fragment>
     );
 }
+
+
+/**
+ * Add classes to editor wrapper element
+ */
+const addWrapperClasses = createHigherOrderComponent( ( BlockListBlock ) => {
+    return ( props ) => {
+
+		console.log(props);
+
+		// Bail out if it’s not the block we want to target.
+		if ( 'bootenberg/column' !== props.block.name ) {
+			return <BlockListBlock { ...props } />;
+		  }
+
+        return <BlockListBlock { ...props } className={ classnames( props.attributes.className, ...createColumnClasses( props ) ) } />;
+    }; 
+}, 'addWrapperClasses' );
+
+wp.hooks.addFilter( 'editor.BlockListBlock', 'bootenberg/column', addWrapperClasses );
+
 
 export default editColumn;
