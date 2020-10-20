@@ -53,8 +53,8 @@ registerBlockType( 'bootenberg/row', {
 		const ALLOWED_BLOCKS = [ 'bootenberg/column' ];
 
 		return (
-			<div className={ classnames( 'bootenberg-outer', className ) }>
-				<InnerBlocks orientation="horizontal" allowedBlocks={ ALLOWED_BLOCKS } __experimentalPassedProps={ { className: 'row' } } />
+			<div className={ classnames( 'bootenberg-outer') }>
+				<InnerBlocks orientation="horizontal" allowedBlocks={ ALLOWED_BLOCKS } __experimentalPassedProps={ { className: classnames('row', className ) } } />
 			</div>
 		);
 	},

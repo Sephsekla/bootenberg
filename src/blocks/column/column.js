@@ -106,12 +106,14 @@ registerBlockType( 'bootenberg/column', {
 const withClientIdClassName = createHigherOrderComponent( ( BlockListBlock ) => {
     return ( props ) => {
 
+		console.log(props);
+
 		// Bail out if it’s not the block we want to target.
 		if ( 'bootenberg/column' !== props.block.name ) {
 			return <BlockListBlock { ...props } />;
 		  }
 
-        return <BlockListBlock { ...props } className={ classnames( props.className, ...createColumnClasses( props ) ) } />;
+        return <BlockListBlock { ...props } className={ classnames( props.attributes.className, ...createColumnClasses( props ) ) } />;
     }; 
 }, 'withClientIdClassName' );
 
