@@ -7,8 +7,13 @@
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
-const { InnerBlocks } = wp.blockEditor;
+const { InnerBlocks, InspectorControls, BlockControls } = wp.blockEditor;
+const { PanelBody, PanelRow, FormToggle, SelectControl } = wp.components;
 const classnames = require( 'classnames' );
+const { default: editColumn } = require('./edit');
+const { Fragment } = wp.element;
+const { createHigherOrderComponent } = wp.compose;
+import './edit.js';
 
 /**
  * Register: aa Gutenberg Block.
@@ -35,35 +40,50 @@ registerBlockType( 'bootenberg/column', {
 	],
 	parent: [ 'bootenberg/row' ],
 	supports: {
-		lightBlockWrapper: true,
+		//lightBlockWrapper: true,
+	},
+	attributes: {
+		xs: {
+			type: 'number',
+			default: 12,
+        
+		},
+		sm: {
+            type: 'number',
+        
+		},
+		md: {
+            type: 'number',
+        
+		},
+		lg: {
+            type: 'number',
+        
+		},
+		xl: {
+            type: 'number',
+        
+        },
 	},
 
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
 	 * This represents what the editor will render when the block is used.
 	 *
-	 * The "edit" property must be a valid function.
+	 * The 'edit' property must be a valid function.
 	 *
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 *
 	 * @param {Object} props Props.
 	 * @returns {Mixed} JSX Component.
 	 */
-	edit: ( props ) => {
-		const { className } = props;
-
-		return (
-			<div className={ classnames( 'col-6 bootenberg-outer', className ) }>
-				<InnerBlocks />
-			</div>
-		);
-	},
+	edit: editColumn,
 
 	/**
 	 * The save function defines the way in which the different attributes should be combined
 	 * into the final markup, which is then serialized by Gutenberg into post_content.
 	 *
-	 * The "save" property must be specified and must be a valid function.
+	 * The 'save' property must be specified and must be a valid function.
 	 *
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 *
@@ -80,3 +100,17 @@ registerBlockType( 'bootenberg/column', {
 		);
 	},
 } );
+
+const withClientIdClassName = createHigherOrderComponent( ( BlockListBlock ) => {
+    return ( props ) => {
+
+		// Bail out if it’s not the block we want to target.
+		if ( 'bootenberg/column' !== props.block.name ) {
+			return <BlockListBlock { ...props } />;
+		  }
+
+        return <BlockListBlock { ...props } className={ classnames(props.clientId, 'col-6') } />;
+    };
+}, 'withClientIdClassName' );
+
+wp.hooks.addFilter( 'editor.BlockListBlock', 'bootenberg/column', withClientIdClassName );
