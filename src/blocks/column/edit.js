@@ -54,9 +54,9 @@ const editColumn = ( props ) => {
                  <PanelBody  title={ 'Width' } >
                     <RenderSelect size={xs} noNullValue={true} label={'XS'} label2={'Default width'} onUpdate={ ( value ) => setAttributes( { xs: parseInt(value) } ) } {...props} />
                     <RenderSelect size={sm} label={'SM'} label2={'min-width: 576px'} onUpdate={ ( value ) => setAttributes( { sm: parseInt(value) } ) } {...props} />
-                    <RenderSelect size={md} label={'MD'} label2={'min-width: 576px'} onUpdate={ ( value ) => setAttributes( { md: parseInt(value) } ) } {...props} />
-                    <RenderSelect size={lg} label={'LG'} label2={'min-width: 576px'} onUpdate={ ( value ) => setAttributes( { lg: parseInt(value) } ) } {...props} />
-                    <RenderSelect size={xl} label={'XL'} label2={'min-width: 576px'} onUpdate={ ( value ) => setAttributes( { xl: parseInt(value) } ) } {...props} />
+                    <RenderSelect size={md} label={'MD'} label2={'min-width: 768px'} onUpdate={ ( value ) => setAttributes( { md: parseInt(value) } ) } {...props} />
+                    <RenderSelect size={lg} label={'LG'} label2={'min-width: 992px'} onUpdate={ ( value ) => setAttributes( { lg: parseInt(value) } ) } {...props} />
+                    <RenderSelect size={xl} label={'XL'} label2={'min-width: 1200px'} onUpdate={ ( value ) => setAttributes( { xl: parseInt(value) } ) } {...props} />
                 </PanelBody>
             </InspectorControls>
 
