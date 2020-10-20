@@ -25,7 +25,7 @@ const RenderSelect = ( props ) => {
 
         
         options={ [
-            //{ value: null, label: 'Select a User', disabled: false },
+            { value: null, label: 'Inherit from smaller', disabled: props.noNullValue ? true : false },
             { value: 1, label: '1 (1/12)' },
             { value: 2, label: '2 (1/6)' },
             { value: 3, label: '3 (1/4)' },
@@ -52,7 +52,11 @@ const editColumn = ( props ) => {
         <Fragment>
             <InspectorControls>
                  <PanelBody  title={ 'Width' } >
-                    <RenderSelect size={xs} label={'Width'} label2={'Default'} onUpdate={ ( value ) => setAttributes( { xs: parseInt(value) } ) } {...props} />
+                    <RenderSelect size={xs} noNullValue={true} label={'XS'} label2={'Default width'} onUpdate={ ( value ) => setAttributes( { xs: parseInt(value) } ) } {...props} />
+                    <RenderSelect size={sm} label={'SM'} label2={'min-width: 576px'} onUpdate={ ( value ) => setAttributes( { sm: parseInt(value) } ) } {...props} />
+                    <RenderSelect size={md} label={'MD'} label2={'min-width: 576px'} onUpdate={ ( value ) => setAttributes( { md: parseInt(value) } ) } {...props} />
+                    <RenderSelect size={lg} label={'LG'} label2={'min-width: 576px'} onUpdate={ ( value ) => setAttributes( { lg: parseInt(value) } ) } {...props} />
+                    <RenderSelect size={xl} label={'XL'} label2={'min-width: 576px'} onUpdate={ ( value ) => setAttributes( { xl: parseInt(value) } ) } {...props} />
                 </PanelBody>
             </InspectorControls>
 
