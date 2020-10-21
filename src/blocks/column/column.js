@@ -1,8 +1,8 @@
 /**
  * BLOCK: Column
  *
- * Create a Bootstrap container
- * Wraps content in a container div
+ * Create a Bootstrap column
+ * Wraps content in a conlumn div. This can only be placed in a row.
  */
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
@@ -14,6 +14,7 @@ const { default: editColumn } = require('./edit');
 const { Fragment } = wp.element;
 const { createHigherOrderComponent } = wp.compose;
 import './edit.js';
+import colIcon from './icon.js';
 import { createColumnClasses } from './shared.js';
 
 /**
@@ -32,7 +33,7 @@ import { createColumnClasses } from './shared.js';
 registerBlockType( 'bootenberg/column', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
 	title: __( 'Bootenberg - column' ), // Block title.
-	icon: 'align-center', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+	icon: colIcon,
 	category: 'bootenberg', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
 		__( 'bootenberg — column' ),

@@ -9,6 +9,7 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { InnerBlocks } = wp.blockEditor;
 const classnames = require( 'classnames' );
+const { default: containerIcon } = require('./icon');
 
 /**
  * Register: aa Gutenberg Block.
@@ -26,7 +27,7 @@ const classnames = require( 'classnames' );
 registerBlockType( 'bootenberg/container', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
 	title: __( 'Bootenberg - Container' ), // Block title.
-	icon: 'align-center', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+	icon: containerIcon,
 	category: 'bootenberg', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
 		__( 'bootenberg — Container' ),
