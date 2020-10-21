@@ -51,7 +51,7 @@ registerBlockType( 'bootenberg/container', {
 	},
 
 	getEditWrapperProps( attributes ) {
-		return { 'data-align': 'wide' };
+		return { 'data-align': 'wide' }; // We set to align-wide in the editor, but don't add the actual attribute due to class conflicts
 	},
 
 	/**

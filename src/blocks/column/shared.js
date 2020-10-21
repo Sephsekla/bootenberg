@@ -1,3 +1,7 @@
+/**
+ * Create an array of classes to pass to our column
+ * @param {object} props 
+ */
 const createColumnClasses = ( props ) => {
 
 	const { xs, sm, md, lg, xl } = props.attributes;

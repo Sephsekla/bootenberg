@@ -9,50 +9,10 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { InnerBlocks } = wp.blockEditor;
 const classnames = require( 'classnames' );
+const { default: exampleLayout } = require('./example');
 const { default: rowIcon } = require('./icon');
 
-const exampleLayout = {
-	innerBlocks: [
-		{
-			name: 'bootenberg/column',
-			attributes: {
-				xs: 6,
-			},
-			
-				innerBlocks: [
-					{
-						name: 'core/paragraph',
-						attributes: {
-							/* translators: example text. */
-							content: __(
-								'Here is a column'
-							),
-						},
-					},
-					],
 
-		},
-		{
-			name: 'bootenberg/column',
-			attributes: {
-				xs: 6,
-			},
-
-				innerBlocks: [
-					{
-						name: 'core/paragraph',
-						attributes: {
-							/* translators: example text. */
-							content: __(
-								'Here is a column'
-							),
-						},
-					},
-					],
-
-		},
-		],
-};
 
 /**
  * Register: aa Gutenberg Block.
