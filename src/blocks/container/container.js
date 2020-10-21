@@ -28,12 +28,17 @@ registerBlockType( 'bootenberg/container', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
 	title: __( 'Bootenberg - Container' ), // Block title.
 	icon: containerIcon,
-	category: 'bootenberg', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+	category: 'design', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
 		__( 'bootenberg — Container' ),
 		__( 'bootstrap' ),
 		__( 'container' ),
 	],
+	description: __(`Containers are used to contain, pad, and (sometimes) center the content within them. Their max-width changes responsively.`),
+
+	getEditWrapperProps( attributes ) {
+		return { 'data-align': 'wide' };
+	},
 
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
@@ -50,7 +55,7 @@ registerBlockType( 'bootenberg/container', {
 		const { className } = props;
 
 		return (
-			<div className={ classnames( 'container bootenberg-outer', className ) }>
+			<div className={ classnames( 'container bootenberg-outer is-style-wide', className ) }>
 				<InnerBlocks />
 			</div>
 		);
@@ -71,7 +76,7 @@ registerBlockType( 'bootenberg/container', {
 		const { className } = props;
 
 		return (
-			<div className={ classnames( 'container', className ) }>
+			<div className={ classnames( 'container is-style-wide', className ) }>
 				<InnerBlocks.Content />
 			</div>
 		);

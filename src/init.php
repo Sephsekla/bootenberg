@@ -108,4 +108,4 @@ function block_category( $categories, $post ) {
     );
 }
 
-add_filter( 'block_categories', __NAMESPACE__.'\\block_category', 10, 2);
+//add_filter( 'block_categories', __NAMESPACE__.'\\block_category', 10, 2);

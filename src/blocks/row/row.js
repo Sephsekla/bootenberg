@@ -28,12 +28,13 @@ registerBlockType( 'bootenberg/row', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
 	title: __( 'Bootenberg - Row' ), // Block title.
 	icon: rowIcon,
-	category: 'bootenberg', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+	category: 'design', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
 		__( 'bootenberg — Row' ),
 		__( 'bootstrap' ),
 		__( 'row' ),
 	],
+	description: __(`Rows are used to wrap responsive columns for your layout.`),
 
 
 	/**

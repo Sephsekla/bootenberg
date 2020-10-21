@@ -34,13 +34,14 @@ registerBlockType( 'bootenberg/column', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
 	title: __( 'Bootenberg - column' ), // Block title.
 	icon: colIcon,
-	category: 'bootenberg', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+	category: 'design', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
 		__( 'bootenberg — column' ),
 		__( 'bootstrap' ),
 		__( 'column' ),
 	],
 	parent: [ 'bootenberg/row' ],
+	description: __(`Columns sit within a row. They can be sized responsively for different screen sizes.`),
 	supports: {
 		//lightBlockWrapper: true,
 	},
