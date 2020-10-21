@@ -11,6 +11,49 @@ const { InnerBlocks } = wp.blockEditor;
 const classnames = require( 'classnames' );
 const { default: rowIcon } = require('./icon');
 
+const exampleLayout = {
+	innerBlocks: [
+		{
+			name: 'bootenberg/column',
+			attributes: {
+				xs: 6,
+			},
+			
+				innerBlocks: [
+					{
+						name: 'core/paragraph',
+						attributes: {
+							/* translators: example text. */
+							content: __(
+								'Here is a column'
+							),
+						},
+					},
+					],
+
+		},
+		{
+			name: 'bootenberg/column',
+			attributes: {
+				xs: 6,
+			},
+
+				innerBlocks: [
+					{
+						name: 'core/paragraph',
+						attributes: {
+							/* translators: example text. */
+							content: __(
+								'Here is a column'
+							),
+						},
+					},
+					],
+
+		},
+		],
+};
+
 /**
  * Register: aa Gutenberg Block.
  *
@@ -35,6 +78,7 @@ registerBlockType( 'bootenberg/row', {
 		__( 'row' ),
 	],
 	description: __(`Rows are used to wrap responsive columns for your layout.`),
+	example: exampleLayout,
 
 
 	/**

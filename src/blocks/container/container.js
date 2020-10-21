@@ -36,6 +36,20 @@ registerBlockType( 'bootenberg/container', {
 	],
 	description: __(`Containers are used to contain, pad, and (sometimes) center the content within them. Their max-width changes responsively.`),
 
+	example: {
+		innerBlocks: [
+			{
+				name: 'core/paragraph',
+				attributes: {
+					/* translators: example text. */
+					content: __(
+						'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et eros eu felis.'
+					),
+				},
+			},
+			],
+	},
+
 	getEditWrapperProps( attributes ) {
 		return { 'data-align': 'wide' };
 	},
