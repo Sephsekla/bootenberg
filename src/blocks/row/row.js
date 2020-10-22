@@ -12,6 +12,7 @@ const classnames = require( 'classnames' );
 const { default: editRow } = require('./edit');
 const { default: exampleLayout } = require('./example');
 const { rowIcon } = require('./icon');
+import returnAlignmentClasses from './shared';
 
 
 
@@ -70,7 +71,7 @@ registerBlockType( 'bootenberg/row', {
 		const { className } = props;
 
 		return (
-			<div className={ classnames( 'row', className ) }>
+			<div className={ classnames( 'row', className, ...returnAlignmentClasses(props) ) }>
 				<InnerBlocks.Content />
 			</div>
 		);

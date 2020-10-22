@@ -1,4 +1,5 @@
 import { alignmentIcons } from './icon';
+import returnAlignmentClasses from './shared';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 
@@ -27,7 +28,7 @@ const HAlignButtons = ( props ) => {
 	return <ButtonGroup>
 		{ buttons.map( 
 			button => ( <IconButton key={button.value} isPressed={button.value === halign } 
-				onClick={ () => { setAttributes( { halign: button.value } ) } } label={ button.text } icon={ button.icon } /> )
+				onClick={ () => { setAttributes( { halign: halign === button.value ? null : button.value } ) } } label={ button.text } icon={ button.icon } /> )
 		) }
 	</ButtonGroup>;
 };
@@ -61,7 +62,7 @@ const editRow = ( props ) => {
 				 </PanelBody>
 			</InspectorControls>
 	   <div className={ classnames( 'bootenberg-outer bootenberg-row') }>
-		   <InnerBlocks orientation="horizontal" allowedBlocks={ ALLOWED_BLOCKS } template={ TEMPLATE } __experimentalPassedProps={ { className: classnames('row', className ) } } />
+		   <InnerBlocks orientation="horizontal" allowedBlocks={ ALLOWED_BLOCKS } template={ TEMPLATE } __experimentalPassedProps={ { className: classnames('row', className, ...returnAlignmentClasses(props) ) } } />
 	   </div>
 	   </Fragment>
    );
