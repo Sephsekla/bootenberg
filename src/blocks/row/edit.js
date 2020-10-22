@@ -33,6 +33,30 @@ const HAlignButtons = ( props ) => {
 	</ButtonGroup>;
 };
 
+const VAlignButtons = ( props ) => {
+
+	const { setAttributes } = props;
+
+	const { valign } = props.attributes;
+
+	const buttons = [
+		{ text: 'Start', value: 'start', icon: alignmentIcons.start },
+		{ text: 'End', value: 'end', icon: alignmentIcons.end },
+		{ text: 'Center', value: 'center', icon: alignmentIcons.center },
+		{ text: 'Stretch', value: 'stretch', icon: alignmentIcons.between },
+
+	];
+
+
+
+	return <ButtonGroup>
+		{ buttons.map( 
+			button => ( <IconButton key={button.value} isPressed={button.value === valign } 
+				onClick={ () => { setAttributes( { valign: valign === button.value ? null : button.value } ) } } label={ button.text } icon={ button.icon } /> )
+		) }
+	</ButtonGroup>;
+};
+
 /**
 * The edit function describes the structure of your block in the context of the editor.
 * This represents what the editor will render when the block is used.
@@ -55,9 +79,14 @@ const editRow = ( props ) => {
    return (
 	   <Fragment>
 		   <InspectorControls>
-                 <PanelBody  title={ 'Alignment' } >
+                 <PanelBody  title={ 'Horizontal Alignment' } >
 					<PanelRow  title={ 'Horizontal Alignment' } >
 						<HAlignButtons { ...props } />
+					</PanelRow>
+				 </PanelBody>
+				 <PanelBody  title={ 'Vertical Alignment' } >
+					<PanelRow  title={ 'Vertical Alignment' } >
+						<VAlignButtons { ...props } />
 					</PanelRow>
 				 </PanelBody>
 			</InspectorControls>
