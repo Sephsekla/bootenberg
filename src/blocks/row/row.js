@@ -9,6 +9,7 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { InnerBlocks } = wp.blockEditor;
 const classnames = require( 'classnames' );
+const { default: editRow } = require('./edit');
 const { default: exampleLayout } = require('./example');
 const { default: rowIcon } = require('./icon');
 
@@ -39,32 +40,20 @@ registerBlockType( 'bootenberg/row', {
 	],
 	description: __(`Rows are used to wrap responsive columns for your layout.`),
 	example: exampleLayout,
-
-
-	/**
-	 * The edit function describes the structure of your block in the context of the editor.
-	 * This represents what the editor will render when the block is used.
-	 *
-	 * The "edit" property must be a valid function.
-	 *
-	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-	 *
-	 * @param {Object} props Props.
-	 * @returns {Mixed} JSX Component.
-	 */
-	edit: ( props ) => {
-		const { className } = props;
-
-
-		const ALLOWED_BLOCKS = [ 'bootenberg/column' ];
-		const TEMPLATE = [[ 'bootenberg/column', {} ]];
-
-		return (
-			<div className={ classnames( 'bootenberg-outer bootenberg-row') }>
-				<InnerBlocks orientation="horizontal" allowedBlocks={ ALLOWED_BLOCKS } template={ TEMPLATE } __experimentalPassedProps={ { className: classnames('row', className ) } } />
-			</div>
-		);
+	attributes: {
+		halign: {
+			type: 'string',
+        
+		},
+		valign: {
+			type: 'string',
+        
+		},
 	},
+
+
+
+	edit: editRow,
 
 	/**
 	 * The save function defines the way in which the different attributes should be combined
