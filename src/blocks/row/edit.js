@@ -1,4 +1,4 @@
-import { alignmentIcons } from './icon';
+import { hAlignmentIcons, vAlignmentIcons } from './icon';
 import returnAlignmentClasses from './shared';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
@@ -15,11 +15,11 @@ const HAlignButtons = ( props ) => {
 	const { halign } = props.attributes;
 
 	const buttons = [
-		{ text: 'Start', value: 'start', icon: alignmentIcons.start },
-		{ text: 'End', value: 'end', icon: alignmentIcons.end },
-		{ text: 'Center', value: 'center', icon: alignmentIcons.center },
-		{ text: 'Space Between', value: 'between', icon: alignmentIcons.between },
-		{ text: 'Space Around', value: 'around', icon: alignmentIcons.around },
+		{ text: 'Start', value: 'start', icon: hAlignmentIcons.start },
+		{ text: 'End', value: 'end', icon: hAlignmentIcons.end },
+		{ text: 'Center', value: 'center', icon: hAlignmentIcons.center },
+		{ text: 'Space Between', value: 'between', icon: hAlignmentIcons.between },
+		{ text: 'Space Around', value: 'around', icon: hAlignmentIcons.around },
 
 	];
 
@@ -40,10 +40,10 @@ const VAlignButtons = ( props ) => {
 	const { valign } = props.attributes;
 
 	const buttons = [
-		{ text: 'Start', value: 'start', icon: alignmentIcons.start },
-		{ text: 'End', value: 'end', icon: alignmentIcons.end },
-		{ text: 'Center', value: 'center', icon: alignmentIcons.center },
-		{ text: 'Stretch', value: 'stretch', icon: alignmentIcons.between },
+		{ text: 'Start', value: 'start', icon: vAlignmentIcons.start },
+		{ text: 'End', value: 'end', icon: vAlignmentIcons.end },
+		{ text: 'Center', value: 'center', icon: vAlignmentIcons.center },
+		{ text: 'Stretch', value: 'stretch', icon: vAlignmentIcons.stretch },
 
 	];
 

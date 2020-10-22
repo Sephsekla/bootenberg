@@ -2973,7 +2973,8 @@ html {
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0;
-  margin-right: 0; }
+  margin-right: 0;
+  border: 1px solid rgba(128, 128, 128, 0.1); }
 
 .wp-block-bootenberg-container > .block-editor-inner-blocks > div > .wp-block {
   max-width: 100%; }
