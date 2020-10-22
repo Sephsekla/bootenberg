@@ -11,7 +11,7 @@ const { InnerBlocks } = wp.blockEditor;
 const classnames = require( 'classnames' );
 const { default: editRow } = require('./edit');
 const { default: exampleLayout } = require('./example');
-const { default: rowIcon } = require('./icon');
+const { rowIcon } = require('./icon');
 
 
 

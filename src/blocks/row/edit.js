@@ -1,8 +1,9 @@
+import { alignmentIcons } from './icon';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 
 const { InnerBlocks, InspectorControls, BlockControls } = wp.blockEditor;
-const { Button, ButtonGroup, PanelBody, PanelRow, } = wp.components;
+const { IconButton, Button, ButtonGroup, PanelBody, PanelRow, } = wp.components;
 const { Fragment } = wp.element;
 const classnames = require( 'classnames' );
 
@@ -13,11 +14,11 @@ const HAlignButtons = ( props ) => {
 	const { halign } = props.attributes;
 
 	const buttons = [
-		{ text: 'Start', value: 'start' },
-		{ text: 'End', value: 'end' },
-		{ text: 'Center', value: 'center' },
-		{ text: 'Space Between', value: 'between' },
-		{ text: 'Space Around', value: 'around' },
+		{ text: 'Start', value: 'start', icon: alignmentIcons.start },
+		{ text: 'End', value: 'end', icon: alignmentIcons.end },
+		{ text: 'Center', value: 'center', icon: alignmentIcons.center },
+		{ text: 'Space Between', value: 'between', icon: alignmentIcons.between },
+		{ text: 'Space Around', value: 'around', icon: alignmentIcons.around },
 
 	];
 
@@ -25,8 +26,8 @@ const HAlignButtons = ( props ) => {
 
 	return <ButtonGroup>
 		{ buttons.map( 
-			button => ( <Button key={button.value} isPressed={button.value === halign } 
-				onClick={ () => { setAttributes( { halign: button.value } ) } } >{ button.text }</Button> )
+			button => ( <IconButton key={button.value} isPressed={button.value === halign } 
+				onClick={ () => { setAttributes( { halign: button.value } ) } } label={ button.text } icon={ button.icon } /> )
 		) }
 	</ButtonGroup>;
 };
