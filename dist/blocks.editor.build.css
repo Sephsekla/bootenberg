@@ -2940,15 +2940,18 @@ html {
   transition: 0.05s; }
 
 /**Set spacing for grid items**/
-.wp-block-bootenberg-row.block-editor-block-list__layout .block-list-appender {
-  width: 100%; }
-
-.wp-block-bootenberg-row.block-editor-block-list__layout > .wp-block {
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  border: 1px solid rgba(128, 128, 128, 0.1); }
+.wp-block-bootenberg-row.block-editor-block-list__layout {
+  width: 100%;
+  max-width: 100%; }
+  .wp-block-bootenberg-row.block-editor-block-list__layout, .wp-block-bootenberg-row.block-editor-block-list__layout .block-list-appender {
+    width: 100%;
+    max-width: 100%; }
+  .wp-block-bootenberg-row.block-editor-block-list__layout > .wp-block {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    border: 1px solid rgba(128, 128, 128, 0.1); }
 
 .wp-block-bootenberg-container > .block-editor-inner-blocks > div > .wp-block {
   max-width: 100%; }

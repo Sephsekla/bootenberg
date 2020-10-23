@@ -3,7 +3,8 @@ import returnAlignmentClasses from './shared';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 
-const { InnerBlocks, InspectorControls, BlockControls } = wp.blockEditor;
+const { InnerBlocks, InspectorControls, BlockControls, useBlockProps} = wp.blockEditor;
+const useInnerBlocksProps = wp.blockEditor.__experimentalUseInnerBlocksProps;
 const { IconButton, Button, ButtonGroup, PanelBody, PanelRow, } = wp.components;
 const { Fragment } = wp.element;
 const classnames = require( 'classnames' );
@@ -76,6 +77,15 @@ const editRow = ( props ) => {
    const ALLOWED_BLOCKS = [ 'bootenberg/column' ];
    const TEMPLATE = [[ 'bootenberg/column', {} ]];
 
+   const blockProps = useBlockProps( {
+	className: classnames( 'row', className, ...returnAlignmentClasses(props) ),
+} );
+
+const innerBlocksProps = useInnerBlocksProps( blockProps, {
+	allowedBlocks: ALLOWED_BLOCKS,
+	template: TEMPLATE,
+} );
+
    return (
 	   <Fragment>
 		   <InspectorControls>
@@ -91,7 +101,7 @@ const editRow = ( props ) => {
 				 </PanelBody>
 			</InspectorControls>
 	   <div className={ classnames( 'bootenberg-outer bootenberg-row') }>
-		   <InnerBlocks orientation="horizontal" allowedBlocks={ ALLOWED_BLOCKS } template={ TEMPLATE } __experimentalPassedProps={ { className: classnames('row', className, ...returnAlignmentClasses(props) ) } } />
+	   		<div { ...innerBlocksProps } />
 	   </div>
 	   </Fragment>
    );
