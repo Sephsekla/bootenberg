@@ -5,7 +5,7 @@
  *  Description: Bringing the power of Bootstrap 4 to the Gutenberg Editor
  *  Author: Joe Bailey-Roberts
  *  Author URI: https://jbr.digital
- *  Version: 1.5.0
+ *  Version: 1.5.1
  *  Stable tag: Trunk
  *  Tags: Gutenberg, Layout, Bootstrap
  *  Requires at least: 5.5
