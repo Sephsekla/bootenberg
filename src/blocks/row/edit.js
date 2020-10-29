@@ -74,8 +74,8 @@ const editRow = ( props ) => {
    const { halign, valign } = props.attributes;
 
 
-   const ALLOWED_BLOCKS = [ 'bootenberg/column' ];
-   const TEMPLATE = [[ 'bootenberg/column', {} ]];
+   const ALLOWED_BLOCKS = [ 'rglb/column' ];
+   const TEMPLATE = [[ 'rglb/column', {} ]];
 
 
    /**
@@ -117,7 +117,7 @@ const editRow = ( props ) => {
 					</PanelRow>
 				 </PanelBody>
 			</InspectorControls>
-	   <div className={ classnames( 'bootenberg-outer bootenberg-row') }>
+	   <div className={ classnames( 'rglb-outer rglb-row') }>
 	   		<InnerRowBlocks { ...props } />
 	   </div>
 	   </Fragment>

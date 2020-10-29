@@ -70,7 +70,7 @@ const editColumn = ( props ) => {
                 </PanelBody>
             </InspectorControls>
 
-            <div className={ classnames( 'bootenberg-outer' ) }>
+            <div className={ classnames( 'rglb-outer' ) }>
                 <InnerBlocks />
             </div>
         </Fragment>
@@ -87,7 +87,7 @@ const addWrapperClasses = createHigherOrderComponent( ( BlockListBlock ) => {
 
 
 		// Bail out if it’s not the block we want to target.
-		if ( 'bootenberg/column' !== props.block.name ) {
+		if ( 'rglb/column' !== props.block.name ) {
 			return <BlockListBlock { ...props } />;
 		  }
 
@@ -95,7 +95,7 @@ const addWrapperClasses = createHigherOrderComponent( ( BlockListBlock ) => {
     }; 
 }, 'addWrapperClasses' );
 
-wp.hooks.addFilter( 'editor.BlockListBlock', 'bootenberg/column', addWrapperClasses );
+wp.hooks.addFilter( 'editor.BlockListBlock', 'rglb/column', addWrapperClasses );
 
 
 export default editColumn;

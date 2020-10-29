@@ -3,7 +3,7 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const exampleLayout = {
 	innerBlocks: [
 		{
-			name: 'bootenberg/column',
+			name: 'rglb/column',
 			attributes: {
 				xs: 6,
 			},
@@ -22,7 +22,7 @@ const exampleLayout = {
 
 		},
 		{
-			name: 'bootenberg/column',
+			name: 'rglb/column',
 			attributes: {
 				xs: 6,
 			},

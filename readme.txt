@@ -1,4 +1,4 @@
- Plugin Name: Bootenberg
+ Plugin Name: Responsive Grid Layout Blocks (Bootstrap 4)
  Plugin URI: https://github.com/sephsekla/bootenberg
  Description: Bringing the power of Bootstrap 4 to the Gutenberg Editor
  Author: Joe Bailey-Roberts
@@ -11,9 +11,9 @@
  License: GPL2+
  License URI: https://www.gnu.org/licenses/gpl-2.0.txt
 
-# Bootenberg
+# Responsive Grid Layout Blocks (Bootstrap 4)
 
-Bootenberg brings the power of [Bootstrap 4](https://getbootstrap.com/) and its layout grid to the Gutenberg editor.
+Responsive Grid Layout Blocks (Bootstrap 4) brings the power of [Bootstrap 4](https://getbootstrap.com/) and its layout grid to the Gutenberg editor.
 
 ## How does it work?
 

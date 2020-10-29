@@ -29,13 +29,13 @@ import returnAlignmentClasses from './shared';
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'bootenberg/row', {
+registerBlockType( 'rglb/row', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Bootenberg - Row' ), // Block title.
+	title: __( 'RGLB - Bootstrap Row' ), // Block title.
 	icon: rowIcon,
 	category: 'design', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
-		__( 'bootenberg — Row' ),
+		__( 'rglb — Row' ),
 		__( 'bootstrap' ),
 		__( 'row' ),
 	],

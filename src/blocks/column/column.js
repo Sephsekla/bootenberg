@@ -30,17 +30,17 @@ import { createColumnClasses } from './shared.js';
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'bootenberg/column', {
+registerBlockType( 'rglb/column', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Bootenberg - column' ), // Block title.
+	title: __( 'RGLB - Bootstrap column' ), // Block title.
 	icon: colIcon,
 	category: 'design', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
-		__( 'bootenberg — column' ),
+		__( 'rglb — column' ),
 		__( 'bootstrap' ),
 		__( 'column' ),
 	],
-	parent: [ 'bootenberg/row' ],
+	parent: [ 'rglb/row' ],
 	description: __(`Columns sit within a row. They can be sized responsively for different screen sizes.`),
 	supports: {
 		//lightBlockWrapper: true,

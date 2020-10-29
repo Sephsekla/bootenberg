@@ -24,13 +24,13 @@ const { default: containerIcon } = require('./icon');
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'bootenberg/container', {
+registerBlockType( 'rglb/container', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Bootenberg - Container' ), // Block title.
+	title: __( 'RGLB - Bootstrap Container' ), // Block title.
 	icon: containerIcon,
 	category: 'design', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
-		__( 'bootenberg — Container' ),
+		__( 'rglb — Container' ),
 		__( 'bootstrap' ),
 		__( 'container' ),
 	],
@@ -69,7 +69,7 @@ registerBlockType( 'bootenberg/container', {
 		const { className } = props;
 
 		return (
-			<div className={ classnames( 'container bootenberg-outer is-style-wide', className ) }>
+			<div className={ classnames( 'container rglb-outer is-style-wide', className ) }>
 				<InnerBlocks />
 			</div>
 		);
